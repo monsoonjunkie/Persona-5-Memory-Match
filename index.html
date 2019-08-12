@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PerSona 5 Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="title_page visible">
+        <div class="title_container">
+                <img class="title_image" src="images/Title_Screen.png" alt="title image">
+                <div class= "earwig title_sub">Memory Match Game</div>
+                <div class="start">Click to Begin</div>
+                <audio id="intro_music">
+                    <source src="music/Persona_5_intro_song.mp3" type="audio/mpeg">
+                </audio>
+        </div>
+    </div>
+    <div class = "how_to hidden">
+        <div class="how_to_container">
+            <div class="heading2">How to Play</div>
+            <div class="help_bg">
+                <img class="help_tip"src="images/how_to.gif" alt="">
+            </div>
+            
+            <div class="help">Welcome to the Persona 5 Memory Match Game! </div>
+            <div class="heading3">
+                <div class="col"> Persona 5 Memory Match is a 2 player game where each player takes turns flipping cards to match a pair.</div>
+                <div class="col">Pick which player you want to be and just start flipping cards. Once all the cards have been matched, the player with the most matched pairs wins!</div>
+                <div class="col">I hope you enjoy playing this as much as I enjoy making it. Thank you!</div>
+            </div>
+            <div class="close">Close</div></div>
+        </div>
+    </div>
+    <div class="game hidden">
+        <div class="header">
+            <img class="hat right" src="images/hat.png" alt="hat image">
+            <img class = "logo" src="images/Title_Screen.png" alt="logo">
+            <img class="hat left" src="images/hat.png" alt="hat image">
+            <div class="header_image">MEMORY MATCH</div>
+        </div>
+        <div class="main_body">
+            <div class="status_screen">
+                <div class="player_info">
+                    <img class="portrait_size portrait_image_1">
+                </div>
+                <div class="player_name">
+                    <div class="stats match pflex">
+                        <div class="player1margin">
+                            <div class="earwig player1">PLAYER 1</div>
+                            <div class="match">Matches</div>
+                            <div class="counter_1">0</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card_space"></div>
+            <div class="status_screen status_screen_2">
+                <div class="player_name">
+                    <div class="stats match pflex">
+                        <div class="player2margin">
+                            <div class="match">Matches</div>
+                            <div class="counter_2">0</div>
+                            <div class="earwig player2">PLAYER 2</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player_info">
+                    <img class=" portrait_size portrait_image_2">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="current_round earwig red">Current Turn</div>
+            <div class="current_round current_player"></div>
+            <div class="button-container">
+                <div class="button-margin">
+                    <button id="music_button" class="button_styling button_position">Play Music</button>
+                </div>
+                <div class="button-margin">
+                    <button id="reset_button" class="button_styling button_position">Game Reset</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="my_modal" class="modal">
+            <div class="modal_content">
+                <div>
+                    <img class="critical">
+                </div>
+            </div>
+        </div>
+        <div id="modal_ending2" class="modal">
+            <div class="modal_content">
+                <img class="finisher2 modal_finale">
+            </div>
+        </div>
+        <div id="modal_ending" class="modal">
+            <div class="modal_content">
+                <img class="finisher modal_finale">
+            </div>
+        </div>
+        <audio id="background_music">
+            <source src="music/Persona_5_ Last_Surprise.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="match_music">
+            <source src="music/p5_stat_up.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</body>
+
+</html>

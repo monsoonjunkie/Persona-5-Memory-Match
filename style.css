@@ -1,0 +1,637 @@
+@font-face {
+    font-family: "Personafied";
+    src: url("font/PersonifiedUXRegular.woff") format('woff')
+}
+@font-face {
+    font-family: "Earwig";
+    src: url("font/EarwigFactory-Regular.woff") format('woff')
+}
+@media only screen and (max-width: 930px)
+    and (min-resolution: 2dppx)
+{
+   
+}
+@keyframes color-me-in {
+    0% {
+      background: white;
+    }
+    50% {
+       background:  rgb(52, 55, 58)
+    }
+    100% {
+      background: white;
+    }
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+  }
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+  }
+.title_page{
+    position: absolute;
+}
+.start {
+    font-family: "Personafied";
+    font-size: 2rem;
+    color: white;
+    margin-top: 30px;
+}
+.start:hover {
+    cursor: pointer;
+}
+#title{
+    font-size: 40px;
+}
+.title_sub{
+    width: 100%;
+    top: 200px;
+    
+}
+.title_image{
+    margin-top: 15px;
+    position: relative;
+    width: 240px;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    margin: 0;
+    font-size: 0;
+    
+}
+.title_container{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: red;
+    text-align: center;
+    
+}
+.intro_size{
+    width: 100vw;
+    height: 100vh;
+}
+.game {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+.header {
+    background-color: red;
+    height: 25%;
+    font-family: "Earwig", "Personafied", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.main_body {
+    background-color: lightblue;
+    position: relative;
+    height: 50%;
+}
+.status_screen {
+    background-color: #7E5555;
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    display: inline-block;
+}
+.status_screen_2{
+    right: 0;
+}
+.card_space {
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    right: 25%;
+    left: 25%;
+    position: absolute;
+}
+
+.card_row {
+    display:flex;
+    align-content: space-around;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+    height: 33.33%;
+    
+}
+.card_boundary {
+    width: 16.66%;
+    height: auto;
+    perspective: 600px;
+    margin: 1%;
+}
+.footer {
+    background-color: black;
+    height: 25%;
+}
+
+.card_back_flip {
+    transform: rotateY(180deg);
+}
+.card_is_fliped {
+    transform: rotateY(180deg);
+
+}
+.card_face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.card_front, .card_back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+.card_back{
+    transform:translateZ(1px);
+
+    backface-visibility: hidden;
+    
+}
+.card_front {
+    transform: rotateY( 180deg )
+}
+.card:hover{
+    cursor: pointer;
+}
+.player_info {
+    background-color: rgb(52, 55, 58);
+    height: 50%;
+}
+.front_size{
+    height: 100%;
+    width: 100%;
+}
+
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 110px;
+    max-height: 150px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    
+    
+}
+.player_name {
+    height: 50%;
+    position: relative;
+    
+}
+.portrait_image_turn{
+    animation: color-me-in 2s infinite;
+    background-color: rgb(52, 55, 58)
+}
+.portrait_size {
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+}
+.red{
+    background-color: red;
+}
+.logo {
+    height: 44%;
+    max-height: 150px;
+    margin-top: 10px;
+}
+.match {
+    font-family: 'Personafied', 'Earwig', cursive;
+    font-size: 4vh;
+    text-align: center;
+
+}
+.match_left {
+    text-align: right;
+}
+.earwig{
+    font-family: 'Earwig', sans-serif;
+    font-size: 4vh;
+}
+.stats{
+    height: 100%;
+}
+.stats_2{
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+  }
+
+#my_modal{
+    display: none;
+}
+#modal_ending{
+    display: none;
+}
+#modal_ending2{
+    display: none;
+}
+
+
+.modal_content {
+    background-color: transparent;
+    padding: 0;
+    border: 0px transparent;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.critical {
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+}
+
+.current_round {
+    color: black;
+    text-align: center;
+}
+.current_player {
+    font-family: 'Personafied';
+    font-size: 5vh;
+    color: aliceblue;
+}
+.modal_finale {
+    width: 100%;
+}
+.image_counter{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hat {
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    max-height: 150px;
+    max-width: 150px;
+}
+.right {
+    left: 150px;
+    top: 50px;
+}
+.left {
+    right: 150px;
+    top: 50px;
+}
+.personified {
+    font-family: "Personafied";
+    font-size: 25px;
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    color: #c74f4f;
+    background-color: black;
+    width: 250px;
+    border-radius: 15%;
+    border-color: #aba6a6;
+    right: 625px;
+}
+.color_highlight {
+    color: red;
+}
+#title_two{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 50%;    
+    right: 50%;
+}
+#title_sub_2{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20%;
+    left: 0;
+}
+
+#title{
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 50%;    
+    right: 50%;
+
+}
+.start_text {
+    font-family: 'Personafied';
+    font-size: 40px;
+    color: white;
+    background-color: black;
+    
+}
+.button_styling {
+    background-color: black;
+    color: #c06363;
+    bottom: 85px;
+    font-size: 18px;
+    border-radius: 10%;
+}
+.title {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Personafied';
+    font-size: 25px;
+    color: white;
+}
+.button_position{
+    margin: auto;
+    display: block;
+}
+.button-margin{
+    margin-top: 1%;
+}
+.help{
+    font-size: 4vh;
+    font-family: personafied;
+    background: #333638;
+    color: white;
+}
+.close{
+    font-size: 7vh;
+    background: red;
+    font-family: 'Earwig'
+    
+}
+.help_tip {
+    height: 100%;
+    max-width: 800px;
+    width: 100vw;
+    max-height: 400px;
+}
+.how_to {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.how_to_container{
+    height: 100vh;
+    width: 100vw;
+    background: red;
+}
+.heading2 {
+    font-size: 4rem;
+    font-family: personafied;
+    background: #333638;
+    color: white;
+
+}
+.heading3{
+    display: flex;
+    font-size: 2rem;
+    font-family: personafied;
+    background:black;
+    color: white;
+    justify-content: space-between;
+}
+.help_bg {
+    background: black;
+}
+.col{
+    width: 33.33%;
+    padding: 3px;
+    font-size: 3vh;
+}
+.player2margin{
+    margin: auto
+}
+.player1margin{
+    margin:auto
+}
+.pflex{
+    display: flex
+}
+
+
+@media only screen 
+    
+    and (max-width: 667px)
+    and (min-resolution: 2dppx)
+    and (orientation: portrait) 
+    {
+    .header {
+        background-color: red;
+        height: 15%;
+        font-family: "Earwig", "Personafied", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .earwig {
+        font-size: 8vw;
+    }
+    .current_player {
+        font-size: 6vw;
+    }
+    .right {
+        left: 30px;
+        top: 30px;
+    }
+    .left {
+        right: 30px;
+        top: 30px;
+    }
+    .hat{
+        height: 7%;
+        width: 13%;
+    }
+    .match{
+        font-size: 1rem;
+    }
+    .player_name {
+        width: 50%;
+        height: 100%;
+        vertical-align: top;
+        position: relative;
+        display: inline-block;
+    }
+    .player1{
+        font-size: 1.5rem;
+    }
+    .player2{
+        font-size: 1.5rem;
+    }
+    .player_info {
+        display: inline-block;
+        background-color: rgb(52, 55, 58);
+        width: 50%;
+        height: 100%;
+    }
+    .status_screen {
+        background-color: #7E5555;
+        display: flex;
+        height: 20%;
+        position: relative;
+        width: 100%;
+    }
+    .card_space {
+        background-color: rgb(0, 0, 0);
+        display: block;
+        width: 100%;
+        height: 60%;
+        right: 0;
+        left: 0;
+        position: static;
+    }
+    .main_body {
+        background-color: lightblue;
+        position: relative;
+        height: 70%;
+    }
+    .footer {
+        background-color: black;
+        height: 15%;
+    }
+    .card {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+    }
+    .button-margin{
+        margin-top: 1%;
+    }
+    .button_position{
+        margin: auto;
+        display: block;
+    }
+    .button_styling {
+        background-color: black;
+        color: #c06363;
+        bottom: 85px;
+        font-size: 1rem;
+        border-radius: 10%;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .heading3{
+        font-size: 4vw;
+    }
+    .close {
+        font-size: 4vh;;
+    }
+    .help {
+        font-size: 1.70rem;
+        padding: 6px;
+    }
+    .heading2 {
+        font-size: 4vh;
+    }
+}
+@media only screen 
+    
+    and (max-width: 1080px) 
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape)
+    {
+    .hat {
+        height: 15%;
+        width: 10%;
+    }
+    .player2{
+        font-size: 1.5rem;
+    }
+    .player1 {
+        font-size: 1.5rem;
+    }
+    .title_sub{
+        font-size: 3rem;
+    }
+    .match {
+        font-size: 1.5rem;
+    }
+    .current_round {
+        font-size: 1.25rem;
+    }
+    .current_player {
+        font-size: 1.5rem;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .button-margin {
+        margin-top: 0;
+    }
+    .right {
+        left: 75px;
+        top: 25px;
+    }
+    .left {
+        right: 75px;
+        top: 25px;
+    }
+    .logo {
+        margin-top: 5px;
+    }
+    .header {
+        font-size: 1.5rem;
+    }
+    .help_tip {
+        max-height: 100%;
+        max-width: 280px;
+        width: 100%;
+    }
+    .heading2 {
+        font-size: 1.5rem;
+        font-family: personafied;
+        background: #333638;
+        color: white;
+    }
+    .help {
+        font-size: 1rem;
+    }
+    .close {
+        font-size: 4vw;
+    }
+    .heading3 {
+        display: flex;
+        font-family: personafied;
+        background: black;
+        color: white;
+        justify-content: space-between;
+    }
+    .col {
+        font-size: 4vh;
+    }
+}
