@@ -390,6 +390,9 @@ body{
     font-family: 'Earwig'
     
 }
+.close:hover{
+    cursor: pointer;
+}
 .help_tip {
     height: 100%;
     max-width: 800px;
@@ -438,6 +441,9 @@ body{
 }
 .pflex{
     display: flex
+}
+button:hover{
+    cursor: pointer;
 }
 
 
