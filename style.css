@@ -449,7 +449,7 @@ button:hover{
 
 @media only screen 
     
-    and (max-width: 667px)
+    and (max-width: 768px)
     and (min-resolution: 2dppx)
     and (orientation: portrait) 
     {
@@ -479,7 +479,7 @@ button:hover{
         width: 13%;
     }
     .match{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .player_name {
         width: 50%;
@@ -489,10 +489,10 @@ button:hover{
         display: inline-block;
     }
     .player1{
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .player2{
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
     .player_info {
         display: inline-block;

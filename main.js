@@ -9,8 +9,6 @@ function start_app(){
     $('#reset_button').on('click', reset);
     $('.start').click(startIntro);
     $('.close').click(closeHelp);
-    console.log("1",portrait_1);
-    console.log("2", portrait_2)
    
 }
 
@@ -281,8 +279,6 @@ function card_clicked(){
 function current_player_turn(){
     var player2turn = win(portrait_1);
     var player1turn = win(portrait_2);
-    console.log('p2',player2turn.critical);
-    console.log('p1',player1turn.critical)
     if(player_turn === false){
         $('.critical').attr('src', player1turn.critical);
         $('.current_player').text('Player 2');
