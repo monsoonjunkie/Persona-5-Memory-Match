@@ -22,11 +22,12 @@ var portrait_array = ['images/joker.png', 'images/crow.png', 'images/fox.png','i
                         'images/panther.png', 'images/skull.png', 'images/mona.png', 'images/queen.png'];
 var portrait_crit = ['images/crow_crit', 'images/fox_crit', 'images/joker_crit', 'images/mona_crit', 'images/noir_crit',
                         'images/panther_crit', 'images/queen_crit', 'images/skull_crit']
-
+var player1Info = null;
+var player2Info = null;
 var music_playing = false;               
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 9;
+var total_possible_matches =2;
 var match_counter = 0;
 var number_of_buttons_clicked = 0;
 var second_card_clicked_hide;
@@ -44,10 +45,14 @@ var player_two_match = 0;
 var score = 0;
 var player_turn = false;
 
+
 function startIntro(){
     $('.title_page').removeClass('visible').addClass('hidden');
     $('.how_to').removeClass('hidden').addClass('visible');
-    toggle_music();
+    var musicSession = sessionStorage.getItem('music_status');
+    if (musicSession == 'true' || musicSession == null){
+        toggle_music();
+    }
 }
 function closeHelp(){
     $('.how_to').removeClass('visible').addClass('hidden');
@@ -76,28 +81,28 @@ function reset(){
 function win(portrait){
     
     if(portrait === 'images/joker.png' ){
-        return {critical: 'images/joker_crit.png', finisher: 'images/joker.gif'}
+        return {critical: 'images/joker_crit.png', finisher: 'images/joker.gif', name: 'Joker'}
     }
     if(portrait === 'images/fox.png' ){
-        return {critical: 'images/fox_crit.png', finisher: 'images/fox.gif'}
+        return {critical: 'images/fox_crit.png', finisher: 'images/fox.gif', name: 'Fox'}
     }
     if(portrait=== 'images/panther.png' ){
-        return {critical: 'images/panther_crit.png', finisher: 'images/panther.gif'}
+        return {critical: 'images/panther_crit.png', finisher: 'images/panther.gif', name: 'Panther'}
     }
     if(portrait=== 'images/crow.png' ){
-        return {critical: 'images/crow_crit.png', finisher: 'images/crow.gif'}
+        return {critical: 'images/crow_crit.png', finisher: 'images/crow.gif', name: 'Crow'}
     }
     if(portrait=== 'images/mona.png' ){
-        return {critical: 'images/mona_crit.png', finisher: 'images/mona.gif'}
+        return {critical: 'images/mona_crit.png', finisher: 'images/mona.gif', name: 'Mona'}
     }
     if(portrait=== 'images/queen.png' ){
-        return {critical: 'images/queen_crit.png', finisher: 'images/queen.gif'}
+        return {critical: 'images/queen_crit.png', finisher: 'images/queen.gif', name: 'Queen'}
     }
     if(portrait=== 'images/skull.png' ){
-        return {critical: 'images/skull_crit.png', finisher: 'images/skull.gif'}
+        return {critical: 'images/skull_crit.png', finisher: 'images/skull.gif', name: 'Skull'}
     }
     if(portrait=== 'images/noir.png' ){
-        return {critical: 'images/noir_crit.png', finisher: 'images/noir.gif'}
+        return {critical: 'images/noir_crit.png', finisher: 'images/noir.gif', name: 'Noir'}
     }
     return;
    }
@@ -146,6 +151,7 @@ function toggle_music(){
         music_pause();
         music_playing = false;
     }
+    sessionStorage.setItem('music_status', music_playing);
 }
 
 function player_portrait() {
@@ -154,10 +160,10 @@ function player_portrait() {
     $('.portrait_image_2').attr('src', portrait_array[1]);
     portrait_1 = $('.portrait_image_1').attr('src');
     portrait_2 = $('.portrait_image_2').attr('src');
-    var player1 = win(portrait_1);
-    var player2 = win(portrait_2);
-    $('.finisher').attr('src', player1.finisher);
-    $('.finisher2').attr('src', player2.finisher);
+    player1Info = win(portrait_1);
+    player2Info = win(portrait_2);
+    $('.finisher').attr('src', player1Info.finisher);
+    $('.finisher2').attr('src', player2Info.finisher);
 }
     
 function shuffle(array) {
@@ -247,7 +253,7 @@ function card_clicked(){
                 
                 setTimeout(function(){
                     $("#modal_ending2").fadeOut(4000);
-                    $('.current_player').text('Player 2 Wins!'); 
+                    $('.current_player').text(player2Info.name +' Wins!'); 
                 }, 2000);
                 return;
 
@@ -257,7 +263,7 @@ function card_clicked(){
                 
                 setTimeout(function(){
                     $("#modal_ending").fadeOut(4000);
-                    $('.current_player').text('Player 1 Wins!'); 
+                    $('.current_player').text(player1Info.name +' Wins!'); 
                 }, 2000);
                 return;
 
@@ -281,7 +287,7 @@ function current_player_turn(){
     var player1turn = win(portrait_2);
     if(player_turn === false){
         $('.critical').attr('src', player1turn.critical);
-        $('.current_player').text('Player 2');
+        $('.current_player').text(player1turn.name);
         $('.portrait_image_1').removeClass('portrait_image_turn');
         $('.portrait_image_2').addClass('portrait_image_turn');
         
@@ -290,7 +296,7 @@ function current_player_turn(){
 
     } else{
         $('.critical').attr('src', player2turn.critical);
-        $('.current_player').text('Player 1');
+        $('.current_player').text(player2turn.name);
         $('.portrait_image_2').removeClass('portrait_image_turn');
         $('.portrait_image_1').addClass('portrait_image_turn');
         player_turn = false;
