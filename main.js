@@ -27,7 +27,7 @@ var player2Info = null;
 var music_playing = false;               
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches =2;
+var total_possible_matches = 9;
 var match_counter = 0;
 var number_of_buttons_clicked = 0;
 var second_card_clicked_hide;
