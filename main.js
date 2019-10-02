@@ -119,8 +119,8 @@ function make_card_space(array){
     
             var card_boundary = $('<div>').addClass('card_boundary');
             var card_div = $('<div>').addClass('card');
-            var image_elem_back = $('<img>').addClass('card_back').attr('src', 'images/tarot_back.png').addClass('card_face');
-            var image_elem_front = $('<img>').addClass('card_front').attr('src', new_array[image_counter]).addClass('card_face');
+            var image_elem_back = $('<img>').addClass('card_back').attr('src', 'images/tarot_back.png');
+            var image_elem_front = $('<img>').addClass('card_front').attr('src', new_array[image_counter]);
             card_row.append(card_boundary);
             card_boundary.append(card_div);;
             card_div.append(image_elem_front, image_elem_back);
