@@ -159,8 +159,8 @@ body{
 }
 .card_back{
     transform:translateZ(1px);
-
     backface-visibility: hidden;
+    background: white;
     
 }
 .card_front {
